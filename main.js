@@ -1,7 +1,9 @@
 //primitive battleship game
-var location1 = 3;
-var location2 = 4;
-var location = 5;
+
+var randomLocation = Math.floor(Math.random()*5);
+var location1 = randomLocation;
+var location2 = location1 + 1;
+var location3 = location2 + 1;
 
 var guess;
 var hits = 0;
@@ -16,8 +18,8 @@ while (isSunk ==false) {
     } else {
         guesses = guesses +1; //the number of trials
     
-    if(guess == location1 || guess == location2 || location3){
-        alert('bingo!')
+    if(guess == location1 || guess == location2 || guess == location3){
+        alert('bingo!');
         hits = hits +1;
 
         if(hits==3){
@@ -28,8 +30,9 @@ while (isSunk ==false) {
         }
     }
 }
+};
 
-}
+
 
 var stats="You needed " + guesses + " trials to sunk the ship, " + " yor effectivness is: " + (3/guesses) + ".";
 
